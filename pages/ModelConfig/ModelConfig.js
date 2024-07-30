@@ -1,4 +1,6 @@
 // pages/ModelConfig/ModelConfig.js
+import { Toast } from 'tdesign-miniprogram'
+
 Page({
 
   /**
@@ -11,6 +13,7 @@ Page({
     modelNote: '请选择模型版本',
     subModelTitles: ['请选择模型', '请选择版本号'],
     isSubmitBtnDisabled: true,
+    TongyiApiKey: '',
     modelList: [{
       value: 'TONGYI',
       label: '通义千问',
@@ -43,6 +46,31 @@ Page({
       modelValue,
       modelVersionValue: value,
       modelNote: selectedOptions.map((item) => item.label).join('/'),
+    });
+  },
+
+  handleTongyiApikeyChange(e) {
+    const { detail: { value } } = e
+    console.log(value.length > 0)
+    this.setData({
+      TongyiApiKey: value,
+      isSubmitBtnDisabled: !value.length > 10
+    })
+  },
+
+  handleClearConfig() {
+    this.setData({
+      TongyiApiKey: '',
+      isSubmitBtnDisabled: true,
+      modelVersionValue: '',
+      modelValue: '',
+      modelNote: '请选择模型版本'
+    })
+    Toast({
+      context: this,
+      selector: '#t-toast',
+      message: '清空成功',
+      icon: 'check-circle',
     });
   },
 
