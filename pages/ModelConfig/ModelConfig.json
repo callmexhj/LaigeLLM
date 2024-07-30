@@ -1,0 +1,7 @@
+{
+  "usingComponents": {
+    "t-cell": "tdesign-miniprogram/cell/cell",
+    "t-cascader": "tdesign-miniprogram/cascader/cascader"
+  },
+  "navigationBarTitleText": "创建模型"
+}

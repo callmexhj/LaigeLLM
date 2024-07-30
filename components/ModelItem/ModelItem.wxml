@@ -1,0 +1,20 @@
+<!--components/ModelItem/ModelItem.wxml-->
+<view class="model-item" style="background-color: {{theme}};">
+  <block wx:if="{{!isNew}}">
+    <view class="model-item-left">
+      <image src="{{modelIco}}"></image>
+    </view>
+    <view class="model-item-mid">
+      <view class="model-item-mid-title">{{modelTitle}}</view>
+      <view class="model-item-mid-subtitle">{{modelSubTitle}}</view>
+    </view>
+    <view class="model-item-right">
+      <t-icon name="setting" size="48rpx" color="#fafafa" />
+    </view>
+  </block>
+  <block wx:else>
+    <view class="model-item-new-left">
+      <t-button theme="light" icon="add-circle" size="large" block bind:tap="handleCreateModel">创建模型</t-button>
+    </view>
+  </block>
+</view>

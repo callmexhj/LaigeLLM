@@ -1,0 +1,39 @@
+/* components/ModelItem/ModelItem.wxss */
+.model-item {
+  display: flex;
+  align-items: center;
+  width: 95%;
+  margin: 20rpx auto;
+  height: 150rpx;
+  border-radius: 16rpx;
+}
+.model-item-left {
+  width: 100rpx;
+  height: 100rpx;
+  border-radius: 50%;
+  background-color: white;
+  margin: 0 48rpx;
+  overflow: hidden;
+}
+.model-item-left image {
+  width: 100%;
+  height: 100%;
+}
+.model-item-mid-title {
+  font-size: 34rpx;
+  color: #262626;
+  margin-bottom: 8rpx;
+}
+.model-item-mid-subtitle {
+  font-size: 28rpx;
+  color: #595959;
+}
+.model-item-right {
+  flex: 1;
+  display: flex;
+  justify-content: flex-end;
+  padding: 0 48rpx;
+}
+.model-item-new-left {
+  width: 100%;
+}

@@ -1,0 +1,4 @@
+/* pages/ModelConfig/ModelConfig.wxss */
+.model-config {
+  padding: 20rpx 0;
+}

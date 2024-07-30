@@ -1,0 +1,14 @@
+{
+  "name": "laigellm",
+  "version": "1.0.0",
+  "description": "Wechat Mini APP 开发中",
+  "main": ".eslintrc.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "tdesign-miniprogram": "^1.5.0"
+  }
+}

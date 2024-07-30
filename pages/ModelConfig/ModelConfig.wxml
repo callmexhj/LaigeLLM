@@ -1,0 +1,5 @@
+<!--pages/ModelConfig/ModelConfig.wxml-->
+<view class="model-config">
+  <t-cell title="模型" note="{{modelNote}}" bind:click="showModelCascader" arrow />
+  <t-cascader visible="{{modelCascaderVisible}}" value="{{modelValue}}" options="{{modelList}}" title="请选择地址" bind:change="onModelChange" bind:pick="onPick" />
+</view>
