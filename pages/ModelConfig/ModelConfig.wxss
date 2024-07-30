@@ -1,4 +1,26 @@
 /* pages/ModelConfig/ModelConfig.wxss */
 .model-config {
+  min-height: 100vh;
   padding: 20rpx 0;
+  background-color: #f5f5f5;
+}
+.config-title {
+  width: 95%;
+  margin: 24rpx auto;
+  font-weight: 700;
+  font-size: 34rpx;
+}
+.config-subtitle {
+  width: 95%;
+  margin: 16rpx auto;
+  font-size: 28rpx;
+}
+
+.submit-btn-box {
+  width: 95%;
+  margin: 36rpx auto;
+}
+
+.submit-btn {
+  width: 100%;
 }

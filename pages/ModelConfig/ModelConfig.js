@@ -6,14 +6,23 @@ Page({
    */
   data: {
     modelCascaderVisible: false,
+    modelVersionValue: '',
     modelValue: '',
     modelNote: '请选择模型版本',
+    subModelTitles: ['请选择模型', '请选择版本号'],
+    isSubmitBtnDisabled: true,
     modelList: [{
-      value: 'OpenAI',
-      label: 'OpenAI',
+      value: 'TONGYI',
+      label: '通义千问',
       children: [{
-        value: 'gpt35',
-        label: 'GPT-3.5'
+        value: 'QWENTURBO',
+        label: 'quen-turbo'
+      }, {
+        value: 'QWENPLUS',
+        label: 'quen-plus'
+      }, {
+        value: 'QWENMAX',
+        label: 'quen-max'
       }],
     }]
   },
@@ -28,9 +37,11 @@ Page({
     const {
       selectedOptions,
       value
-    } = e.detail;
+    } = e.detail
+    const modelValue = selectedOptions[0].value
     this.setData({
-      modelValue: value,
+      modelValue,
+      modelVersionValue: value,
       modelNote: selectedOptions.map((item) => item.label).join('/'),
     });
   },
