@@ -1,4 +1,6 @@
 {
   "usingComponents": {
+    "chat-item": "/components/ChatItem/ChatItem",
+    "t-button": "tdesign-miniprogram/button/button"
   }
 }

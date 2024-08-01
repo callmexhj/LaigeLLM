@@ -1,0 +1,13 @@
+<!--components/ChatItem/ChatItem.wxml-->
+<view class="chat-item" hover-class="chat-item-hover" hover-start-time="20" hover-stay-time="100" bind:tap="handleClickChatItem">
+  <view class="chat-ico">
+    <image src="{{chatIco}}"></image>
+  </view>
+  <view class="chat-item-right">
+    <view class="chat-item-right-top">
+      <view class="chat-item-title">{{title}}</view>
+      <t-tag variant="light">{{modelLabel}}</t-tag>
+    </view>
+    <view class="chat-item-subtitle">{{subtitle}}</view>
+  </view>
+</view>

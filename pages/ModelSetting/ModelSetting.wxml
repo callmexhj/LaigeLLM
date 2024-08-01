@@ -1,6 +1,9 @@
 <!--pages/ModelSetting/ModelSetting.wxml-->
 <view class="model-setting">
   <view class="model-list">
+    <view wx:if="{{modelList.length === 0}}" class="empty-view">
+      <t-empty icon="face-retouching" description="快来配置新模型吧" />
+    </view>
     <model-item wx:for="{{modelList}}" modelTitle="{{item.modelTitle}}" modelSubTitle="{{item.modelSubTitle}}" simpleModelId="{{item.simpleModelId}}" wx:key="modelId" modelId="{{item.modelId}}" theme="{{item.theme}}" bind:modifyModel="handleModifyModel" />
     <model-item is-new="false" bind:createModel="handleCreateModel" />
   </view>
