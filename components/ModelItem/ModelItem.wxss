@@ -7,6 +7,11 @@
   height: 150rpx;
   border-radius: 16rpx;
 }
+.model-item-card {
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
 .model-item-left {
   width: 100rpx;
   height: 100rpx;

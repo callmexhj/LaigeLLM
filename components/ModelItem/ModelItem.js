@@ -20,6 +20,14 @@ Component({
       type: String,
       value: 'Default SubTitle'
     },
+    modelId: {
+      type: String,
+      value: null
+    },
+    simpleModelId: {
+      type: String,
+      value: 'modelId'
+    },
     isNew: {
       type: Boolean,
       value: false
@@ -39,6 +47,9 @@ Component({
   methods: {
     handleCreateModel() {
       this.triggerEvent('createModel')
+    },
+    handleModifyModel() {
+      this.triggerEvent('modifyModel', {modelId: this.properties.modelId})
     }
   }
 })

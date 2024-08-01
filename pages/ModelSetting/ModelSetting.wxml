@@ -1,8 +1,8 @@
 <!--pages/ModelSetting/ModelSetting.wxml-->
 <view class="model-setting">
   <view class="model-list">
-    <model-item theme="#ffd591" />
-    <model-item theme="#69b1ff" />
+    <model-item wx:for="{{modelList}}" modelTitle="{{item.modelTitle}}" modelSubTitle="{{item.modelSubTitle}}" simpleModelId="{{item.simpleModelId}}" wx:key="modelId" modelId="{{item.modelId}}" theme="{{item.theme}}" bind:modifyModel="handleModifyModel" />
     <model-item is-new="false" bind:createModel="handleCreateModel" />
   </view>
+  <t-toast id="t-toast" />
 </view>
