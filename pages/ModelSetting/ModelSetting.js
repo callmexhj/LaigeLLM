@@ -2,13 +2,15 @@
 
 const { getModelNameByModelValue } = require('../../systemConfig/modelOptions')
 const colorList = ['#ffd591', '#ffbb96', '#ffa39e', '#91caff', '#87e8de', '#b7eb8f']
+const app = getApp()
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    modelList: []
+    modelList: [],
+    tabbarHeight: app.globalData.tabbarHeight,
   },
 
   onReady() {
