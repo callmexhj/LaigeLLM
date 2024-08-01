@@ -201,6 +201,7 @@ Page({
         modelName,
         modelVersion
       } = modelConfig
+      // TODO（zhouah 20240801）: 由于TDesign组件库(版本号1.5.0)的问题（ISSUES: #1884，#2902），当为级联选择器设置默认值时，无法显示候选option，这个问题预计在下个版本修复，目前需要返回以及选择器重新选择模型，不阻断业务流程。
       this.setData({
         isNewModel: false,
         modelId,
