@@ -35,10 +35,8 @@ Page({
   initChatList() {
     try {
       const chatList = wx.getStorageSync('chatList')
-      console.log(chatList)
       const modelList = wx.getStorageSync('modelList')
       const chatListFit = chatList.map((chatItem) => {
-        console.log(chatItem)
         const {
           modelName,
           modelVersion
@@ -81,7 +79,7 @@ Page({
       success() {
         that.initChatList()
         Toast({
-          context: this,
+          context: that,
           selector: '#t-toast',
           message: '删除对话成功',
           icon: 'check-circle',
@@ -89,7 +87,7 @@ Page({
       },
       fail() {
         Toast({
-          context: this,
+          context: that,
           selector: '#t-toast',
           message: '删除失败',
           icon: 'error-circle',
