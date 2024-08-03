@@ -1,4 +1,4 @@
-export const genModelId = (length) => {
+export const genRandomId = (pre, length) => {
   // 根据给定length输出随机字符
 
   const chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789'
@@ -9,5 +9,5 @@ export const genModelId = (length) => {
     result += chars.charAt(Math.floor(Math.random() * chars.length))
   }
 
-  return `model-${result}`
+  return `${pre}-${result}`
 }

@@ -23,6 +23,10 @@ Component({
     modelLabel: {
       type: String,
       value: 'Default Label'
+    },
+    timestamp: {
+      type: Number,
+      value: null
     }
   },
 
@@ -30,7 +34,15 @@ Component({
    * 组件的初始数据
    */
   data: {
+    foramtTimeStamp: ''
+  },
 
+  lifetimes: {
+    ready: function () {
+      this.setData({
+        foramtTimeStamp: this.formatTimestamp(this.properties.timestamp)
+      })
+    }
   },
 
   /**
@@ -38,7 +50,18 @@ Component({
    */
   methods: {
     handleClickChatItem() {
-      this.triggerEvent('clickChatItem', { chatId: this.properties.chatId })
+      this.triggerEvent('clickChatItem', {
+        chatId: this.properties.chatId
+      })
+    },
+    formatTimestamp(timestamp) {
+      // 将时间戳格式化
+      const date = new Date(timestamp)
+      let hours = date.getHours()
+      let minutes = date.getMinutes()
+      if (hours < 10) hours = '0' + hours;
+      if (minutes < 10) minutes = '0' + minutes;
+      return `${hours}:${minutes}`
     }
   }
 })

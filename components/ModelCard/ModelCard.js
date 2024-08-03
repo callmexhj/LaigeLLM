@@ -20,6 +20,10 @@ Component({
     modelTitle: {
       type: String,
       value: 'Default SubTitle'
+    },
+    hideIco: {
+      type: Boolean,
+      value: false
     }
   },
 

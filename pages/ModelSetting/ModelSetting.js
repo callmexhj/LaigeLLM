@@ -1,11 +1,12 @@
 // pages/ModelSetting/ModelSetting.js
 import {
+  getModelList
+} from '../../systemConfig/getModelList'
+
+import {
   Toast
 } from 'tdesign-miniprogram'
-const {
-  getModelNameByModelValue
-} = require('../../systemConfig/modelOptions')
-const colorList = ['#ffd591', '#ffbb96', '#ffa39e', '#91caff', '#87e8de', '#b7eb8f']
+
 const app = getApp()
 Page({
 
@@ -37,42 +38,10 @@ Page({
     this.updateModelList()
   },
 
-  updateModelList() {
-    // 从缓存获取ModelList并渲染
-    const that = this
-    wx.getStorage({
-      key: 'modelList',
-      success(res) {
-        const {
-          errMsg
-        } = res
-        if (errMsg === 'getStorage:ok') {
-          const {
-            data
-          } = res
-          let index = 0
-          const modelList = data.map((item) => {
-            const {
-              modelName,
-              modelVersion,
-              modelId,
-              config
-            } = item
-            const [modelLabel, versionLabel] = getModelNameByModelValue(modelName, modelVersion)
-            return {
-              modelTitle: modelLabel,
-              modelSubTitle: versionLabel,
-              modelId,
-              config,
-              simpleModelId: modelId.slice(-6),
-              theme: colorList[index++ % colorList.length]
-            }
-          })
-          that.setData({
-            modelList
-          })
-        }
-      }
+  async updateModelList() {
+    const modelList = await getModelList()
+    this.setData({
+      modelList
     })
   },
 
@@ -114,7 +83,7 @@ Page({
     } else {
       try {
         const modelListFromStorage = wx.getStorageSync('modelList')
-        const newModelList = modelListFromStorage.filter((item) => this.data.selectedModelId.indexOf(item.modelId) === -1 )
+        const newModelList = modelListFromStorage.filter((item) => this.data.selectedModelId.indexOf(item.modelId) === -1)
         wx.setStorage({
           key: 'modelList',
           data: [...newModelList],
@@ -128,7 +97,7 @@ Page({
             })
           }
         })
-      } catch(e) {
+      } catch (e) {
         console.error(e)
         Toast({
           context: this,

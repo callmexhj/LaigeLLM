@@ -14,11 +14,11 @@ export const modelOptions = [{
   }]
 }]
 
-export const getModelNameByModelValue = (modelValue, modleVersion) => {
+export function getModelNameByModelValue(modelValue, modleVersion) {
   // 根据模型value和版本value寻找可以用于用户展示的模型信息
   const modelOption = modelOptions.find(option => option.value === modelValue)
   let modelChild = null
-  if (modelOptions) {
+  if (modelOption) {
     modelChild = modelOption.children.find(child => child.value === modleVersion)
   }
   return [modelOption.label, modelChild.label]

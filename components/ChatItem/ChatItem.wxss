@@ -25,6 +25,12 @@
 .chat-item-right-top {
   display: flex;
 }
+.chat-time {
+  position: absolute;
+  right: 32rpx;
+  font-size: 28rpx;
+  color: #595959;
+}
 .chat-item-title {
   font-size: 34rpx;
   font-weight: 600;

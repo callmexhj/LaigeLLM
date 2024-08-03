@@ -7,8 +7,8 @@ const {
   modelOptions
 } = require('../../systemConfig/modelOptions')
 const {
-  genModelId
-} = require('../../systemConfig/genModelId')
+  genRandomId
+} = require('../../systemConfig/genRandomId')
 Page({
 
   /**
@@ -129,7 +129,7 @@ Page({
     const newModelConfig = {
       modelName: this.data.modelValue,
       modelVersion: this.data.modelVersionValue,
-      modelId: this.data.isNewModel ? genModelId(20) : this.data.modelId
+      modelId: this.data.isNewModel ? genRandomId('model', 20) : this.data.modelId
     }
     let dataCache = []
     if (this.data.modelValue === 'TONGYI') {

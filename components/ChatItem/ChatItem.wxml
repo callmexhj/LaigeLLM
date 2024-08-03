@@ -6,7 +6,8 @@
   <view class="chat-item-right">
     <view class="chat-item-right-top">
       <view class="chat-item-title">{{title}}</view>
-      <t-tag variant="light">{{modelLabel}}</t-tag>
+        <t-tag variant="light">{{modelLabel}}</t-tag>
+      <view class="chat-time">{{foramtTimeStamp}}</view>
     </view>
     <view class="chat-item-subtitle">{{subtitle}}</view>
   </view>

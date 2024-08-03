@@ -1,5 +1,7 @@
 {
   "usingComponents": {
+    "t-toast": "tdesign-miniprogram/toast/toast",
+    "model-selector": "/components/ModelSelector/ModelSelector",
     "avatar-creator": "/components/AvatarCreator/AvatarCreator",
     "t-textarea": "tdesign-miniprogram/textarea/textarea",
     "t-cell": "tdesign-miniprogram/cell/cell",

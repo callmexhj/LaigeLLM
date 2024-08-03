@@ -7,7 +7,7 @@
   height: 150rpx;
   border-radius: 16rpx;
   position: relative;
-  /* overflow: hidden; */
+  border: 2px solid #fff;
 }
 .add-model-item {
   height: 200rpx;

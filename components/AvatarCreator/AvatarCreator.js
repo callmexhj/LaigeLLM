@@ -14,7 +14,7 @@ Component({
    * 组件的初始数据
    */
   data: {
-    currentImg: 0,
+    currentImg: 1,
     swiperList: [...avatarList]
   },
 
