@@ -1,0 +1,36 @@
+/* components/ModelCard/ModelCard.wxss */
+.model-card {
+  display: flex;
+  width: 100%;
+  align-items: center;
+}
+.model-card-left {
+  width: 100rpx;
+  height: 100rpx;
+  border-radius: 50%;
+  background-color: white;
+  margin: 0 48rpx;
+  overflow: hidden;
+}
+.model-card-left image {
+  width: 100%;
+  height: 100%;
+}
+.model-card-mid {
+  width: 380rpx;
+}
+.model-card-mid-title {
+  font-size: 34rpx;
+  color: #262626;
+  margin-bottom: 8rpx;
+}
+.model-card-mid-subtitle {
+  font-size: 28rpx;
+  color: #595959;
+}
+.model-card-right {
+  flex: 1;
+  display: flex;
+  justify-content: flex-end;
+  padding: 0 48rpx;
+}

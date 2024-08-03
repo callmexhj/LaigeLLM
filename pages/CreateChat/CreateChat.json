@@ -1,6 +1,10 @@
 {
   "usingComponents": {
-    "avatar-creator": "/components/AvatarCreator/AvatarCreator"
+    "avatar-creator": "/components/AvatarCreator/AvatarCreator",
+    "t-textarea": "tdesign-miniprogram/textarea/textarea",
+    "t-cell": "tdesign-miniprogram/cell/cell",
+    "t-button": "tdesign-miniprogram/button/button",
+    "t-input": "tdesign-miniprogram/input/input"
   },
   "navigationBarTitleText": "新建对话"
 }

@@ -4,7 +4,8 @@
     <t-icon class="left-top-ico-check" name="check" size="36rpx" color="#fff" />
   </view>
   <block wx:if="{{isCard}}">
-    <view class="model-item-card" bind:tap="handleModifyModel">
+    <model-card modelTitle="{{modelTitle}}" modelTitle="{{modelTitle}}" modelSubTitle="{{modelSubTitle}}" simpleModelId="{{simpleModelId}}" bind:modifyModel="handleModifyModel" />
+    <!-- <view class="model-item-card" bind:tap="handleModifyModel">
       <view class="model-item-left">
         <image src="{{modelIco}}"></image>
       </view>
@@ -15,7 +16,7 @@
       <view class="model-item-right">
         <t-icon name="setting" size="48rpx" color="#fafafa" />
       </view>
-    </view>
+    </view> -->
   </block>
   <block wx:if="{{isAdd}}">
     <view class="model-item-new-left">

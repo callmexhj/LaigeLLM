@@ -14,7 +14,6 @@ Component({
    * 组件的初始数据
    */
   data: {
-    selectedAvatar: "",
     currentImg: 0,
     swiperList: [...avatarList]
   },
@@ -24,12 +23,14 @@ Component({
    */
   methods: {
     handleRandomChangeAvatar() {
+      // 随机选择一个头像
       const randomIndex = Math.floor(Math.random() * this.data.swiperList.length)
       this.setData({
         currentImg: randomIndex
       })
     },
     handleSwpierChanged(e) {
+      // 更新当前currentImg并触发change事件
       const currentIndex = e.detail.current
       this.setData({
         currentImg: currentIndex

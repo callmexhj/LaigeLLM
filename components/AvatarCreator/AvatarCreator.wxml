@@ -1,7 +1,7 @@
 <!--components/AvatarCreator/AvatarCreator.wxml-->
 <view class="avator-creator">
   <view class="display-img-box">
-    <swiper current="{{currentImg}}" autoplay="{{false}}" circular layout-type="tinder"	previous-margin="220rpx" 	next-margin="220rpx" layout-type="stackRight" bind:change="handleSwpierChanged">
+    <swiper current="{{currentImg}}" autoplay="{{false}}" circular layout-type="tinder"	previous-margin="210rpx" 	next-margin="210rpx" layout-type="stackRight" bind:change="handleSwpierChanged">
       <block wx:for="{{swiperList}}" wx:key="*this">
         <swiper-item class="swiper-item-box {{index === currentImg ? 'current-item' : ''}}">
           <image src="{{'/systemConfig/images/' + item}}"/>

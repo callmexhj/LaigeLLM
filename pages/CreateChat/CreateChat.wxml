@@ -1,4 +1,15 @@
 <!--pages/CreateChat/CreateChat.wxml-->
 <view class="create-chat">
-  <avatar-creator />
+  <view class="title">聊天头像</view>
+  <avatar-creator bind:change="handleAvatarChanged" />
+  <view class="title">聊天配置</view>
+  <view class="chat-config">
+    <t-cell title="模型选择" bind:tap="handleShowModelSelector" hover arrow/>
+    <t-input label="聊天标题" placeholder="示例: 翻译小助手" />
+    <t-cell title="Prompt配置" hover />
+    <t-textarea style="height: 250rpx;" t-class="external-class" placeholder="示例: 你是一位经验丰富的英语翻译员,每当我给你一段英文或者中文的时候,你能把它们翻译成另一种对应的文本.在翻译结束后请直接输出不带任何前后缀的翻译结果." disableDefaultPadding="{{true}}" />
+  </view>
+  <view class="btn-box">
+    <t-button class="btn" theme="primary" size="large" bind:tap="handleRandomChangeAvatar">新建对话</t-button>
+  </view>
 </view>
