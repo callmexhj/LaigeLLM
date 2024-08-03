@@ -1,0 +1,4 @@
+<!--pages/CreateChat/CreateChat.wxml-->
+<view class="create-chat">
+  <avatar-creator />
+</view>

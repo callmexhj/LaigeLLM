@@ -18,3 +18,15 @@
   position: fixed;
   left: 30%;
 }
+.swipe-btn {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  /* width: 120rpx; */
+  /* padding: 0 20rpx; */
+  height: 100%;
+  color: white;
+}
+.swipe-btn-delete {
+  background-color: #e34d59;
+}

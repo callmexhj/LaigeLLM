@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+    "avatar-creator": "/components/AvatarCreator/AvatarCreator"
+  },
+  "navigationBarTitleText": "新建对话"
+}

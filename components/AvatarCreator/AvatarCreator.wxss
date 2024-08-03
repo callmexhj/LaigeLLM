@@ -1,0 +1,35 @@
+/* components/AvatarCreator/AvatarCreator.wxss */
+.avator-creator {
+  padding: 100rpx 0;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.display-img-box {
+  width: 100%;
+  height: 300rpx;
+}
+.swiper-item-box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.display-img-box image {
+  height: 180rpx;
+  width: 180rpx;
+  opacity: 0.5;
+  transition: width 0.2s, height 0.2s;
+}
+.current-item image {
+  height: 280rpx;
+  width: 280rpx;
+  opacity: 1;
+}
+.btn {
+  width: 100%;
+}
+.btn-box {
+  width: 250rpx;
+  margin: 50rpx 0;
+}

@@ -1,0 +1,15 @@
+<!--components/AvatarCreator/AvatarCreator.wxml-->
+<view class="avator-creator">
+  <view class="display-img-box">
+    <swiper current="{{currentImg}}" autoplay="{{false}}" circular layout-type="tinder"	previous-margin="220rpx" 	next-margin="220rpx" layout-type="stackRight" bind:change="handleSwpierChanged">
+      <block wx:for="{{swiperList}}" wx:key="*this">
+        <swiper-item class="swiper-item-box {{index === currentImg ? 'current-item' : ''}}">
+          <image src="{{'/systemConfig/images/' + item}}"/>
+        </swiper-item>
+      </block>
+    </swiper>
+  </view>
+  <view class="btn-box">
+    <t-button class="btn" icon="giggle" theme="primary" size="large" variant="outline" bind:tap="handleRandomChangeAvatar">随机选一个</t-button>
+  </view>
+</view>

@@ -9,6 +9,9 @@
   position: relative;
   /* overflow: hidden; */
 }
+.add-model-item {
+  height: 200rpx;
+}
 .model-item-card {
   display: flex;
   align-items: center;

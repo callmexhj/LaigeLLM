@@ -4,7 +4,7 @@
     <view wx:if="{{modelList.length === 0}}" class="empty-view">
       <t-empty icon="face-retouching" description="快来配置新模型吧" />
     </view>
-    <scroll-view style="max-height: calc(100vh - {{tabbarHeight}}px - 190rpx);" scroll-y="true">
+    <scroll-view style="max-height: calc(100vh - {{tabbarHeight}}px - 280rpx);" scroll-y="true">
       <model-item wx:for="{{modelList}}" modelTitle="{{item.modelTitle}}" modelSubTitle="{{item.modelSubTitle}}" simpleModelId="{{item.simpleModelId}}" wx:key="modelId" modelId="{{item.modelId}}" theme="{{item.theme}}" bind:modifyModel="handleModifyModel" is-in-edit="{{isInEdit}}" is-card bind:chooseModel="handleChooseModel" />
     </scroll-view>
     <model-item is-new="false" bind:createModel="handleCreateModel" is-add show-edit="{{modelList.length > 0}}" bind:editList="handleEditList" is-in-edit="{{isInEdit}}" bind:deleteModels="handleDeleteModels" bind:cancelDelete="handleCancelDelete" />

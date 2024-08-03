@@ -1,5 +1,5 @@
 <!--components/ModelItem/ModelItem.wxml-->
-<view class="model-item {{isChoosed && isInEdit ? 'select-style' : ''}}" style="background-color: {{theme}};">
+<view class="model-item {{isChoosed && isInEdit ? 'select-style' : ''}} {{ isAdd ? 'add-model-item' : '' }}" style="background-color: {{theme}};">
   <view class="left-top-ico" wx:if="{{isChoosed && isInEdit}}">
     <t-icon class="left-top-ico-check" name="check" size="36rpx" color="#fff" />
   </view>

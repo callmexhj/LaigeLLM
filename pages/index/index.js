@@ -12,7 +12,25 @@ Page({
   },
   data: {
     tabbarHeight: app.globalData.tabbarHeight,
+    right: [
+      {
+        text: '删除',
+        className: 'swipe-btn swipe-btn-delete',
+      },
+    ],
     chatList: [
+      {
+        chatId: '12312313',
+        title: 'This is the Chat title',
+        subtitle: 'This is the Chat subtitle This is the Chat subtitle This is the Chat subtitle This is the Chat subtitle',
+        modelLabel: 'Default Label'
+      },
+      {
+        chatId: '12312313',
+        title: 'This is the Chat title',
+        subtitle: 'This is the Chat subtitle This is the Chat subtitle This is the Chat subtitle This is the Chat subtitle',
+        modelLabel: 'Default Label'
+      },
       {
         chatId: '12312313',
         title: 'This is the Chat title',
@@ -27,6 +45,8 @@ Page({
   },
 
   handleAddChatItem() {
-    
+    wx.navigateTo({
+      url: '/pages/CreateChat/CreateChat',
+    })
   }
 })
