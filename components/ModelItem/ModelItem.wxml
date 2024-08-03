@@ -1,7 +1,10 @@
 <!--components/ModelItem/ModelItem.wxml-->
-<view class="model-item" style="background-color: {{theme}};">
-  <block wx:if="{{!isNew}}">
-    <view class="model-item-card"  bind:tap="handleModifyModel">
+<view class="model-item {{isChoosed && isInEdit ? 'select-style' : ''}}" style="background-color: {{theme}};">
+  <view class="left-top-ico" wx:if="{{isChoosed && isInEdit}}">
+    <t-icon class="left-top-ico-check" name="check" size="36rpx" color="#fff" />
+  </view>
+  <block wx:if="{{isCard}}">
+    <view class="model-item-card" bind:tap="handleModifyModel">
       <view class="model-item-left">
         <image src="{{modelIco}}"></image>
       </view>
@@ -14,8 +17,13 @@
       </view>
     </view>
   </block>
-  <block wx:else>
+  <block wx:if="{{isAdd}}">
     <view class="model-item-new-left">
+      <t-button class="edit-btn" theme="default" icon="edit" size="large" block bind:tap="handleEditList" wx:if="{{showEdit && !isInEdit}}">编辑列表</t-button>
+      <view class="delete-btn-box" wx:if="{{showEdit && isInEdit}}">
+        <t-button class="edit-btn delete-btn" size="large" block bind:tap="handleCancelDelete">取消编辑</t-button>
+        <t-button class="edit-btn" theme="danger" size="large" block bind:tap="handleDeleteModels">批量删除</t-button>
+      </view>
       <t-button theme="light" icon="add-circle" size="large" block bind:tap="handleCreateModel">创建模型</t-button>
     </view>
   </block>

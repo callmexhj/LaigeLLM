@@ -3,5 +3,5 @@
   <scroll-view style="height: calc(100vh - {{tabbarHeight}}px);" scroll-y="true">
     <chat-item wx:for="{{chatList}}" chat-id="{{item.chatId}}" wx:key="chatId" bind:clickChatItem="handleClickChatItem"/>
   </scroll-view>
-  <t-button icon="add-circle" style="bottom: calc({{tabbarHeight}}px + 10px);" class="feb-btn" theme="primary" size="large" shape="round">新增</t-button>
+  <t-button icon="add-circle" style="bottom: calc({{tabbarHeight}}px + 10px);" class="feb-btn" theme="primary" size="large" shape="round" bind:tap="handleAddChatItem">新增</t-button>
 </view>

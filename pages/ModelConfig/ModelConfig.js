@@ -36,6 +36,7 @@ Page({
   },
 
   onModelChange(e) {
+    // 级联选择器响应函数
     let that = this
     const {
       selectedOptions,
@@ -50,6 +51,7 @@ Page({
   },
 
   genModelNote(selectedOptions, modelValue, modelVersionValue) {
+    // 生成级联选择器中显示的文本（根据模型名称和版本号）
     if (selectedOptions.length > 1) return selectedOptions.map((item) => item.label).join('/')
     else if (modelValue && modelVersionValue) {
       const modelOption = modelOptions.find(option => modelValue === option.value)
@@ -60,6 +62,7 @@ Page({
   },
 
   handleTongyiApikeyChange(e) {
+    // 输入响应函数
     const {
       detail: {
         value
@@ -72,6 +75,7 @@ Page({
   },
 
   handleClearConfig() {
+    // 清空已经填写的配置
     this.setData({
       tongyiApiKey: '',
       isSubmitBtnDisabled: true,
@@ -88,6 +92,7 @@ Page({
   },
 
   setModelListStorage(value) {
+    // 持久化保存模型列表信息
     const pages = getCurrentPages()
     const previousPage = pages[pages.length >= 2 ? pages.length - 2 : 0]
     wx.setStorage({
@@ -165,6 +170,7 @@ Page({
   },
 
   findModelConfigByModelId(modelId) {
+    // 根据modelId从缓存中寻找对应的modelConfig
     try {
       const modelList = wx.getStorageSync('modelList')
       if (modelList) {
@@ -188,6 +194,10 @@ Page({
     } = options
     if (modelId) {
       // 判断是新增模型还是修改模型
+      // 修改标题
+      wx.setNavigationBarTitle({
+        title: `编辑模型(${modelId.slice(-6)})`,
+      })
       const modelConfig = this.findModelConfigByModelId(modelId)
       const {
         config,

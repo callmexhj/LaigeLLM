@@ -24,5 +24,9 @@ Page({
 
   handleClickChatItem(e) {
     console.log(e.detail.chatId)
+  },
+
+  handleAddChatItem() {
+    
   }
 })

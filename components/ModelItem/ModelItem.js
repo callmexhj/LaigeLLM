@@ -28,7 +28,19 @@ Component({
       type: String,
       value: 'modelId'
     },
-    isNew: {
+    isCard: {
+      type: Boolean,
+      value: false
+    },
+    isAdd: {
+      type: Boolean,
+      value: false
+    },
+    showEdit: {
+      type: Boolean,
+      value: false
+    },
+    isInEdit: {
       type: Boolean,
       value: false
     }
@@ -38,7 +50,7 @@ Component({
    * 组件的初始数据
    */
   data: {
-
+    isChoosed: false
   },
 
   /**
@@ -49,7 +61,30 @@ Component({
       this.triggerEvent('createModel')
     },
     handleModifyModel() {
-      this.triggerEvent('modifyModel', {modelId: this.properties.modelId})
+      if (this.properties.isInEdit) {
+        this.triggerEvent('chooseModel', {
+          modelId: this.properties.modelId
+        })
+        this.setData({
+          isChoosed: !this.data.isChoosed
+        })
+      } else {
+        this.triggerEvent('modifyModel', {
+          modelId: this.properties.modelId
+        })
+        this.setData({
+          isChoosed: false
+        })
+      }
+    },
+    handleEditList() {
+      this.triggerEvent('editList')
+    },
+    handleDeleteModels() {
+      this.triggerEvent('deleteModels')
+    },
+    handleCancelDelete() {
+      this.triggerEvent('cancelDelete')
     }
   }
 })

@@ -6,6 +6,8 @@
   margin: 20rpx auto;
   height: 150rpx;
   border-radius: 16rpx;
+  position: relative;
+  /* overflow: hidden; */
 }
 .model-item-card {
   display: flex;
@@ -41,4 +43,30 @@
 }
 .model-item-new-left {
   width: 100%;
+}
+.edit-btn {
+  margin: 28rpx 0;
+}
+.select-style {
+  border: 2px solid #ff4d4f;
+}
+.left-top-ico {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 0;
+  border-right: 60rpx solid transparent;
+  border-top: 60rpx solid #ff4d4f; 
+  /* display: flex; */
+}
+.left-top-ico-check {
+  position: relative;
+  bottom: 55rpx;
+}
+.delete-btn-box {
+  display: flex;
+}
+.delete-btn {
+  margin-right: 20rpx;
 }
