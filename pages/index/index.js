@@ -52,7 +52,7 @@ Page({
       })
 
       this.setData({
-        chatList: chatListFit
+        chatList: chatListFit.reverse()
       })
     } catch (e) {
       console.error(e)
