@@ -1,0 +1,7 @@
+{
+  "usingComponents": {
+    "t-toast": "tdesign-miniprogram/toast/toast",
+    "t-empty": "tdesign-miniprogram/empty/empty",
+    "model-item": "/components/ModelItem/ModelItem"
+  }
+}

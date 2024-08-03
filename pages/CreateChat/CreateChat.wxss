@@ -1,0 +1,19 @@
+/* pages/CreateChat/CreateChat.wxss */
+.create-chat {
+  padding-bottom: env(safe-area-inset-bottom);
+}
+.title {
+  font-size: 36rpx;
+  height: 80rpx;
+  margin: 20rpx;
+  display: flex;
+  align-items: center;
+  font-weight: bold;
+}
+.btn-box {
+  width: 95%;
+  margin: auto;
+}
+.btn {
+  width: 100%;
+}

@@ -1,0 +1,13 @@
+<!--components/ModelSelector/ModelSelector.wxml-->
+<t-popup visible="{{visible}}" bind:visible-change="onVisibleChange" placement="bottom">
+  <popup-header title="选择模型" show-btn="true" bind:ok="handleOk" bind:cancel="handleCancel" />
+  <view class="model-list">
+    <view wx:for="{{modelList}}" wx:key="modelId" class="model-item {{modelId === item.modelId ? 'select-style' : ''}}" style="background-color: {{item.theme}};">
+      <view class="select-ico" wx:if="{{modelId === item.modelId}}">
+        <t-icon class="select-ico-check" name="check" size="36rpx" color="#fff" />
+      </view>
+      <model-card model-title="{{item.modelTitle}}" model-sub-title="{{item.modelSubTitle}}" simple-model-id="{{item.simpleModelId}}" bind:modifyModel="handleChecked" hide-ico="true" data-model-id="{{item.modelId}}" />
+    </view>
+  </view>
+  <t-toast id="t-toast" />
+</t-popup>

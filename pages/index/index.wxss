@@ -1,0 +1,32 @@
+/**index.wxss**/
+.container {
+  display: flex;
+  flex-direction: column;
+  /* height: 100vh; */
+  width: 100%;
+  /* padding: 0 0 180rpx 0; */
+}
+.chat-list-view {
+  height: 400rpx;
+}
+.home-page {
+  flex: 1;
+  background-color: lightblue;
+}
+.feb-btn {
+  opacity: 0.9;
+  position: fixed;
+  left: 30%;
+}
+.swipe-btn {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  /* width: 120rpx; */
+  /* padding: 0 20rpx; */
+  height: 100%;
+  color: white;
+}
+.swipe-btn-delete {
+  background-color: #e34d59;
+}

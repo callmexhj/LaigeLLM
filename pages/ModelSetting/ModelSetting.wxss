@@ -1,0 +1,4 @@
+/* pages/ModelSetting/ModelSetting.wxss */
+.empty-view {
+  padding: 150rpx 0;
+}

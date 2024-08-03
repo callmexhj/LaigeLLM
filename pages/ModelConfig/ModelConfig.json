@@ -1,0 +1,10 @@
+{
+  "usingComponents": {
+    "t-cell": "tdesign-miniprogram/cell/cell",
+    "t-textarea": "tdesign-miniprogram/textarea/textarea",
+    "t-button": "tdesign-miniprogram/button/button",
+    "t-toast": "tdesign-miniprogram/toast/toast",
+    "t-cascader": "tdesign-miniprogram/cascader/cascader"
+  },
+  "navigationBarTitleText": "创建模型"
+}

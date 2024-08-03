@@ -1,0 +1,20 @@
+<!--pages/ModelConfig/ModelConfig.wxml-->
+<view class="model-config">
+  <view class="config-title">选择模型</view>
+  <t-cell title="模型" note="{{modelNote}}" bind:click="showModelCascader" arrow />
+  <t-cascader visible="{{modelCascaderVisible}}" sub-titles="{{subModelTitles}}" placeholder="未选择" value="{{modelVersionValue}}" options="{{modelList}}" title="请选择地址" bind:change="onModelChange" />
+  <view wx:if="{{modelValue === 'TONGYI'}}">
+    <view class="config-title">模型配置</view>
+    <view class="model-config-form">
+      <view class="config-subtitle">APIKey</view>
+      <t-textarea t-class="external-class" style="height: 250rpx;" placeholder="请输入APIKey" disableDefaultPadding="{{true}}" default-value="{{tongyiApiKey}}" bind:change="handleTongyiApikeyChange" />
+    </view>
+  </view>
+  <view class="submit-btn-box">
+    <t-button wx:if="{{modelVersionValue !== ''}}" class="submit-btn" size="large" variant="outline" bind:tap="handleClearConfig">清空模型信息</t-button>
+  </view>
+  <view class="submit-btn-box">
+    <t-button disabled="{{isSubmitBtnDisabled}}" class="submit-btn" theme="primary" bind:tap="handleSaveModelConfig" size="large">保存模型信息</t-button>
+  </view>
+  <t-toast id="t-toast" />
+</view>

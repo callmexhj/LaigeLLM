@@ -1,0 +1,32 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/ModelSetting/ModelSetting",
+    "pages/ModelConfig/ModelConfig",
+    "pages/CreateChat/CreateChat"
+  ],
+  "tabBar": {
+    "custom": true,
+    "color": "#000000",
+    "selectedColor": "#000000",
+    "backgroundColor": "#000000",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "聊天"
+      },
+      {
+        "pagePath": "pages/ModelSetting/ModelSetting",
+        "text": "模型"
+      }
+    ]
+  },
+  "usingComponents": {},
+  "window": {
+    "navigationBarTextStyle": "black",
+    "navigationBarTitleText": "LaigeLLM",
+    "navigationBarBackgroundColor": "#ffffff"
+  },
+  "sitemapLocation": "sitemap.json",
+  "lazyCodeLoading": "requiredComponents"
+}

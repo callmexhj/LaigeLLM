@@ -1,2 +1,2 @@
 # LaigeLLM
-Wechat Mini APP
+Wechat Mini APP 开发中

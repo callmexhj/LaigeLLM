@@ -1,0 +1,13 @@
+<!--components/ModelCard/ModelCard.wxml-->
+<view class="model-card" bind:tap="handleModifyModel">
+  <view class="model-card-left">
+    <image src="{{modelIco}}"></image>
+  </view>
+  <view class="model-card-mid">
+    <view class="model-card-mid-title">{{modelTitle}}</view>
+    <view class="model-card-mid-subtitle">版本：{{modelSubTitle}} ({{simpleModelId}})</view>
+  </view>
+  <view class="model-card-right" wx:if="{{!hideIco}}">
+    <t-icon name="setting" size="48rpx" color="#fafafa" />
+  </view>
+</view>

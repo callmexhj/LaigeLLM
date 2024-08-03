@@ -1,0 +1,45 @@
+/* components/ChatItem/ChatItem.wxss */
+.chat-item {
+  display: flex;
+  /* background-color: lightblue; */
+  padding: 24rpx;
+}
+.chat-item-hover {
+  background-color: #00000010;
+}
+.chat-ico {
+  width: 100rpx;
+  height: 100rpx;
+  overflow: hidden;
+  margin-right: 24rpx;
+}
+.chat-ico image {
+  width: 100%;
+  height: 100%;
+}
+.chat-item-right {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+.chat-item-right-top {
+  display: flex;
+}
+.chat-time {
+  position: absolute;
+  right: 32rpx;
+  font-size: 28rpx;
+  color: #595959;
+}
+.chat-item-title {
+  font-size: 34rpx;
+  font-weight: 600;
+  margin: 0 16rpx 16rpx 0;
+}
+.chat-item-subtitle {
+  font-size: 28rpx;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  width: 550rpx;
+}

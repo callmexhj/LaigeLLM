@@ -1,0 +1,10 @@
+{
+  "component": true,
+  "usingComponents": {
+    "t-toast": "tdesign-miniprogram/toast/toast",
+    "t-icon": "tdesign-miniprogram/icon/icon",
+    "popup-header": "/components/PopupHeader/PopupHeader",
+    "model-card": "/components/ModelCard/ModelCard",
+    "t-popup": "tdesign-miniprogram/popup/popup"
+  }
+}

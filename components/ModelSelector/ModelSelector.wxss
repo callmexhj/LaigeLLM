@@ -1,0 +1,27 @@
+/* components/ModelSelector/ModelSelector.wxss */
+.model-item {
+  display: flex;
+  align-items: center;
+  width: 90%;
+  margin: 20rpx auto;
+  height: 150rpx;
+  border-radius: 16rpx;
+  position: relative;
+  border: 2px solid #fff;
+}
+.select-style {
+  border: 2px solid #0052d9;
+}
+.select-ico {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 0;
+  border-right: 60rpx solid transparent;
+  border-top: 60rpx solid #0052d9; 
+}
+.select-ico-check {
+  position: relative;
+  bottom: 55rpx;
+}

@@ -1,0 +1,11 @@
+<!--index.wxml-->
+<view class="container">
+  <scroll-view style="height: calc(100vh - {{tabbarHeight}}px);" scroll-y="true">
+    <!-- TODO（zhouah 20240803）: 由于TDesign组件库(版本号1.5.0)的问题（ISSUES: #2500，#2524），滑动组件暂时需要屏蔽componentFramework: glass-easel,待更新修复。 -->
+    <t-swipe-cell wx:for="{{chatList}}" right="{{right}}" bind:click="onActionClick" data-chat-id="{{item.chatId}}">
+      <chat-item chat-id="{{item.chatId}}" title="{{item.title}}" subtitle="{{item.subtitle}}" wx:key="chatId" bind:clickChatItem="handleClickChatItem" model-label="{{item.modelLabel}}" timestamp="{{item.timestamp || item.createTimestamp}}" chat-ico="{{item.avatorFileUrl}}" />
+    </t-swipe-cell>
+  </scroll-view>
+  <t-button icon="add-circle" style="bottom: calc({{tabbarHeight}}px + 10px);" class="feb-btn" theme="primary" size="large" shape="round" bind:tap="handleAddChatItem">新增</t-button>
+  <t-toast id="t-toast" />
+</view>

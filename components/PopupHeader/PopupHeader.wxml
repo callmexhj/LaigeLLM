@@ -1,0 +1,10 @@
+<!--components/PopupHeader/PopupHeader.wxml-->
+<view class="popup-header">
+  <view class="left-btn" wx:if="{{showBtn}}">
+    <t-button size="medium" variant="text" bind:tap="handleCancel">{{leftBtnText}}</t-button>
+  </view>
+  <view class="title">{{title}}</view>
+  <view class="right-btn" wx:if="{{showBtn}}">
+    <t-button theme="primary" size="medium" variant="text" bind:tap="handleOk">{{rightBtnText}}</t-button>
+  </view>
+</view>

@@ -1,0 +1,75 @@
+/* components/ModelItem/ModelItem.wxss */
+.model-item {
+  display: flex;
+  align-items: center;
+  width: 95%;
+  margin: 20rpx auto;
+  height: 150rpx;
+  border-radius: 16rpx;
+  position: relative;
+  border: 2px solid #fff;
+}
+.add-model-item {
+  height: 200rpx;
+}
+.model-item-card {
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+.model-item-left {
+  width: 100rpx;
+  height: 100rpx;
+  border-radius: 50%;
+  background-color: white;
+  margin: 0 48rpx;
+  overflow: hidden;
+}
+.model-item-left image {
+  width: 100%;
+  height: 100%;
+}
+.model-item-mid-title {
+  font-size: 34rpx;
+  color: #262626;
+  margin-bottom: 8rpx;
+}
+.model-item-mid-subtitle {
+  font-size: 28rpx;
+  color: #595959;
+}
+.model-item-right {
+  flex: 1;
+  display: flex;
+  justify-content: flex-end;
+  padding: 0 48rpx;
+}
+.model-item-new-left {
+  width: 100%;
+}
+.edit-btn {
+  margin: 28rpx 0;
+}
+.select-style {
+  border: 2px solid #ff4d4f;
+}
+.left-top-ico {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 0;
+  border-right: 60rpx solid transparent;
+  border-top: 60rpx solid #ff4d4f; 
+  /* display: flex; */
+}
+.left-top-ico-check {
+  position: relative;
+  bottom: 55rpx;
+}
+.delete-btn-box {
+  display: flex;
+}
+.delete-btn {
+  margin-right: 20rpx;
+}

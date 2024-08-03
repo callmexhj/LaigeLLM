@@ -1,0 +1,8 @@
+{
+  "usingComponents": {
+    "t-toast": "tdesign-miniprogram/toast/toast",
+    "chat-item": "/components/ChatItem/ChatItem",
+    "t-swipe-cell": "tdesign-miniprogram/swipe-cell/swipe-cell",
+    "t-button": "tdesign-miniprogram/button/button"
+  }
+}

@@ -1,0 +1,13 @@
+/* components/PopupHeader/PopupHeader.wxss */
+.popup-header {
+  padding: 20rpx;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.title {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  line-height: 80rpx;
+}
