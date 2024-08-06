@@ -13,12 +13,7 @@ Page({
       text: '删除',
       className: 'swipe-btn swipe-btn-delete',
     }, ],
-    chatList: [{
-      chatId: '12312313',
-      title: 'This is the Chat title',
-      subtitle: 'This is the Chat subtitle This is the Chat subtitle This is the Chat subtitle This is the Chat subtitle',
-      modelLabel: 'Default Label'
-    }]
+    chatList: []
   },
 
   onShow() {
@@ -36,6 +31,13 @@ Page({
     try {
       const chatList = wx.getStorageSync('chatList')
       const modelList = wx.getStorageSync('modelList')
+      console.log(chatList)
+      if (chatList?.length === 0) {
+        this.setData({
+          chatList: []
+        })
+        return
+      }
       const chatListFit = chatList.map((chatItem) => {
         const {
           modelName,
@@ -50,7 +52,7 @@ Page({
           ...chatItem
         }
       })
-
+      console.log(chatListFit)
       this.setData({
         chatList: chatListFit.reverse()
       })
@@ -60,7 +62,9 @@ Page({
   },
 
   handleClickChatItem(e) {
-    console.log(e.detail.chatId)
+    wx.navigateTo({
+      url: `/pages/ChatPage/ChatPage?chatId=${e.detail.chatId}`
+    })
   },
 
   handleAddChatItem() {

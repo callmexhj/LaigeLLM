@@ -1,0 +1,24 @@
+/* components/ChatInput/ChatInput.wxss */
+.chat-input{
+  /* background-color: lightblue; */
+  width: 100%;
+  position: fixed;
+  bottom: 0;
+  margin-bottom: env(safe-area-inset-bottom);
+}
+.input-box {
+  display: flex;
+  align-items: flex-end;
+  width: 95%;
+  margin: auto;
+  border-radius: 24rpx;
+  overflow: hidden;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, .16), 0 0 6px rgba(0, 0, 0, .10);
+}
+.send-ico {
+  margin-bottom: 8px;
+}
+.input-text-area {
+  padding: 16px;
+  width: 75%;
+}

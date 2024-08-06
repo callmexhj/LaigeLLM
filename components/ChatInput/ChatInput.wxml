@@ -1,0 +1,11 @@
+<!--components/ChatInput/ChatInput.wxml-->
+<view class="chat-input">
+  <view class="chat-tools">
+    tools
+  </view>
+  <view class="input-box">
+    <textarea class="input-text-area" maxlength="-1" bind:bindinput="handleInput" auto-height placeholder="自动变高" />
+    <t-button class="send-ico" theme="primary" icon="chevron-up-circle" shape="circle" size="small" aria-label="提交" bind:tap="handleSend"></t-button>
+    <!-- <t-icon name="chevron-up-circle" size="48rpx" /> -->
+  </view>
+</view>
