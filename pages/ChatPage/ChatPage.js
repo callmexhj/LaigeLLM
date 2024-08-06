@@ -1,4 +1,12 @@
 // pages/ChatPage/ChatPage.js
+import {
+  genRequest, handleRequest
+} from '../../systemConfig/messageSender'
+
+import {
+  getModelNameByModelValue
+} from '../../systemConfig/modelOptions'
+
 Page({
 
   /**
@@ -6,16 +14,7 @@ Page({
    */
   data: {
     chatId: '',
-    chatInfo: {},
-    messages: [{
-        role: 'system',
-        content: 'You are a helpful assistant.'
-      },
-      {
-        role: 'assistant',
-        content: '今天天气如何'
-      }
-    ],
+    chatInfo: {}
   },
 
   /**
@@ -37,27 +36,68 @@ Page({
       })
     }
   },
-  
-  handleSendMessage() {
-    const messageCache = [...this.data.messages]
-    messageCache.push({
+
+  handleSendMessage(e) {
+    const messageContent = e.detail
+    if (messageContent.length < 1) {
+      return
+    }
+    const chatInfoCache = this.data.chatInfo
+    chatInfoCache.messages.push({
+      role: 'user',
+      content: messageContent
+    }, {
       role: 'assistant',
       content: ''
     })
     this.setData({
-      messages: messageCache
+      chatInfo: chatInfoCache
+    })
+    const {
+      modelId
+    } = this.data.chatInfo
+    const modelInfo = this.getModelInfo(modelId)
+    this.sendRequest(modelInfo, chatInfoCache.messages)
+  },
+
+  getModelInfo(modelId) {
+    const modelList = wx.getStorageSync('modelList')
+    const modelInfo = modelList.find((item) => item.modelId === modelId)
+    const {
+      modelName,
+      modelVersion
+    } = modelInfo
+    const [modelNameTrue, modelVersionTrue] = getModelNameByModelValue(modelName, modelVersion)
+    return {
+      modelNameTrue,
+      modelVersionTrue,
+      ...modelInfo
+    }
+  },
+
+  sendRequest(modelInfo, messageCache) {
+    const request = genRequest(modelInfo, messageCache)
+    request.onChunkReceived((res) => {
+      const resText = handleRequest(res.data)
+      this.handleReceiveMessage(resText)
     })
   },
 
   handleReceiveMessage(text) {
-    const {
-      detail
-    } = text
-    const messageCache = [...this.data.messages]
-    messageCache[messageCache.length - 1].content += detail
+    if (text.stop) {
+      this.handleSaveMessagesToCache()
+      return
+    }
+    const chatInfoCache = this.data.chatInfo
+    chatInfoCache.messages[chatInfoCache.messages.length - 1].content += text
     this.setData({
-      messages: messageCache
+      chatInfo: chatInfoCache
     })
+  },
+
+  handleSaveMessagesToCache() {
+    const chatList = wx.getStorageSync('chatList')
+    console.log(chatList)
   },
 
   handleErrorBack(message) {

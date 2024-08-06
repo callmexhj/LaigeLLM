@@ -179,7 +179,6 @@ Page({
         content: newChatItem.prompt
       })
     }
-    console.log(newChatItem)
     this.saveChatToStorage(newChatItem)
   }
 

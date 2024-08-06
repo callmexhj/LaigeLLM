@@ -31,7 +31,6 @@ Page({
     try {
       const chatList = wx.getStorageSync('chatList')
       const modelList = wx.getStorageSync('modelList')
-      console.log(chatList)
       if (chatList?.length === 0) {
         this.setData({
           chatList: []
@@ -52,7 +51,6 @@ Page({
           ...chatItem
         }
       })
-      console.log(chatListFit)
       this.setData({
         chatList: chatListFit.reverse()
       })

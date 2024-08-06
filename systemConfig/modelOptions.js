@@ -4,13 +4,13 @@ export const modelOptions = [{
   label: '通义千问',
   children: [ {
     value: 'QWENTURBO',
-    label: 'quen-turbo'
+    label: 'qwen-turbo'
   }, {
     value: 'QWENPLUS',
-    label: 'quen-plus'
+    label: 'qwen-plus'
   }, {
     value: 'QWENMAX',
-    label: 'quen-max'
+    label: 'qwen-max'
   }]
 }]
 

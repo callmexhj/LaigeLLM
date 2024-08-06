@@ -1,6 +1,8 @@
 <!--pages/ChatPage/ChatPage.wxml-->
-<view>
-  <view wx:for="{{messages}}">{{item.content}}</view>
-  <chat-input bind:receiveMessage="handleReceiveMessage" bind:sendMessage="handleSendMessage" />
+<view class="chat-page">
+  <view wx:for="{{chatInfo.messages}}" wx:key="index">
+    <message-item content="{{item.content}}" role="{{item.role}}"/>
+  </view>
+  <chat-input bind:receiveMessage="handleReceiveMessage" bind:sendMessage="handleSendMessage"/>
   <t-toast id="t-toast" />
 </view>
