@@ -46,9 +46,11 @@ Page({
   },
 
   handleLineChange(e) {
-    this.setData({
-      inputHeight: e.detail.detail.height
-    })
+    if (e.detail.detail.lineCount <= 10) {
+      this.setData({
+        inputHeight: e.detail.detail.heightRpx
+      })
+    }
   },
 
   handleSendMessage(e) {
