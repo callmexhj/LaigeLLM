@@ -36,4 +36,5 @@
 .input-text-area {
   padding: 16px;
   width: 75%;
+  max-height: 400rpx;
 }

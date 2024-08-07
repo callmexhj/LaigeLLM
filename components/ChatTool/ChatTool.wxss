@@ -1,7 +1,7 @@
 /* components/ChatTool/ChatTool.wxss */
 .chat-tool {
   height: 56rpx;
-  width: 140rpx;
+  width: 146rpx;
   margin: 10rpx 20rpx 10rpx 0;
   border-radius: 20rpx;
   padding: 0  12rpx;
@@ -13,5 +13,6 @@
   background-color: #f0f0f0;
 }
 .tool-title {
+  margin-left: 10rpx;
   font-size: smaller;
 }

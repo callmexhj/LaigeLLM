@@ -34,6 +34,11 @@ Component({
         inputValue: ''
       })
     },
+    handleClearInput() {
+      this.setData({
+        inputValue: ''
+      })
+    },
     handleClearMessage() {
       this.triggerEvent('clear')
     }
