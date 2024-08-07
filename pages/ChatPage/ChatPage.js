@@ -1,6 +1,7 @@
 // pages/ChatPage/ChatPage.js
 import {
-  genRequest, handleRequest
+  genRequest,
+  handleRequest
 } from '../../systemConfig/messageSender'
 
 import {
@@ -85,6 +86,11 @@ Page({
 
   handleReceiveMessage(text) {
     if (text.stop) {
+      const chatInfoCache = this.data.chatInfo
+      chatInfoCache.messages[chatInfoCache.messages.length - 1].content += text.data
+      this.setData({
+        chatInfo: chatInfoCache
+      })
       this.handleSaveMessagesToCache()
       return
     }

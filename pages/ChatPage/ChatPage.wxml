@@ -1,8 +1,10 @@
 <!--pages/ChatPage/ChatPage.wxml-->
 <view class="chat-page">
-  <view wx:for="{{chatInfo.messages}}" wx:key="index">
-    <message-item content="{{item.content}}" role="{{item.role}}"/>
-  </view>
+  <scroll-view class="chat-page-scroll" scroll-y="true" scroll-into-view="#item-{{chatInfo.messages.length-1}}"  id="chat-scroll-view">
+    <view wx:for="{{chatInfo.messages}}" wx:key="index" id="item-{{index}}">
+      <message-item content="{{item.content}}" role="{{item.role}}"/>
+    </view>
+  </scroll-view>
   <chat-input bind:receiveMessage="handleReceiveMessage" bind:sendMessage="handleSendMessage"/>
   <t-toast id="t-toast" />
 </view>
