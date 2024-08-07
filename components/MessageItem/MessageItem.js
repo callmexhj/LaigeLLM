@@ -1,4 +1,5 @@
 // components/MessageItem/MessageItem.js
+const app = getApp()
 Component({
 
   /**
@@ -19,7 +20,25 @@ Component({
    * 组件的初始数据
    */
   data: {
-    showPrompt: false
+    showPrompt: false,
+    article: {}
+  },
+
+  observers: {
+    'content': function(e) {
+      const result = app.towxml(this.properties.content, 'markdown', {
+        theme: 'trans'
+      })
+      this.setData({
+        article: result
+      })
+    }
+  },
+
+  lifetimes: {
+    attached() {
+      
+    }
   },
 
   /**

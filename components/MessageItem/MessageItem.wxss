@@ -1,6 +1,8 @@
 /* components/MessageItem/MessageItem.wxss */
 .message-item {
+  font-family: '微软雅黑';
   width: 100%;
+  font-size: 32rpx;
 }
 .user-class {
   display: flex;
@@ -26,6 +28,7 @@
 .assistant-message-class {
   color: #000;
   background-color: #e0e0e0;
+  padding: 10rpx 20rpx;
 }
 .system-message-class {
   color: #909399;
@@ -42,4 +45,7 @@
 }
 .prompt-hover {
   background-color: #f0f0f0;
+}
+.h2w-trans{
+  font-family: '微软雅黑';
 }

@@ -1,9 +1,12 @@
 <!--components/MessageItem/MessageItem.wxml-->
 <view class="message-item {{role + '-class'}}">
-  <view class="message-box system-message-class {{showPrompt ? 'show-prompt' : 'hide-prompt'}}" wx:if="{{role === 'system'}}" bind:tap="handleChangePromptStatus" hover-class="prompt-hover" hover-start-time="20" hover-stay-time="1000" >
+  <view class="message-box system-message-class {{showPrompt ? 'show-prompt' : 'hide-prompt'}}" wx:if="{{role === 'system'}}" bind:tap="handleChangePromptStatus" hover-class="prompt-hover" hover-start-time="20" hover-stay-time="1000">
     提示词：{{ content }}
   </view>
   <view class="message-box {{role + '-message-class'}}" wx:else>
-    {{ content }}
+    <view wx:if="{{role === 'user'}}">
+      {{ content }}
+    </view>
+    <towxml class="towxml-class" wx:else nodes="{{article}}" />
   </view>
 </view>
