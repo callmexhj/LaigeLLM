@@ -48,7 +48,7 @@ export function handleRequest(res) {
   const jsonStringArray = responseString.split('data:')
   const contents = [];
   for (let i = 1; i < jsonStringArray.length; i++) {
-    // console.log(jsonStringArray) 
+    // console.log(jsonStringArray)
     const jsonItem = JSON.parse(jsonStringArray[i])
     const {
       choices: [{

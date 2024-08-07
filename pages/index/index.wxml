@@ -5,7 +5,10 @@
     <t-swipe-cell wx:for="{{chatList}}" wx:key="chatId" right="{{right}}" bind:click="onActionClick" data-chat-id="{{item.chatId}}">
       <chat-item chat-id="{{item.chatId}}" title="{{item.title}}" subtitle="{{item.subtitle}}" wx:key="chatId" bind:clickChatItem="handleClickChatItem" model-label="{{item.modelLabel}}" timestamp="{{item.timestamp || item.createTimestamp}}" chat-ico="{{item.avatorFileUrl}}" />
     </t-swipe-cell>
+    <view wx:if="{{chatList.length === 0}}" class="empty-view">
+      <t-empty icon="face-retouching" description="{{modelList.length === 0 ? '还没有模型，先去配置一个吧' : '快点击下方按钮创建对话吧'}}" />
+    </view>
   </scroll-view>
-  <t-button icon="add-circle" style="bottom: calc({{tabbarHeight}}px + 10px);" class="feb-btn" theme="primary" size="large" shape="round" bind:tap="handleAddChatItem">新增</t-button>
+  <t-button wx:if="{{modelList.length !== 0}}" icon="add-circle" style="bottom: calc({{tabbarHeight}}px + 10px);" class="feb-btn" theme="primary" size="large" shape="round" bind:tap="handleAddChatItem">新增</t-button>
   <t-toast id="t-toast" />
 </view>

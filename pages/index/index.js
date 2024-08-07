@@ -13,7 +13,8 @@ Page({
       text: '删除',
       className: 'swipe-btn swipe-btn-delete',
     }, ],
-    chatList: []
+    chatList: [],
+    modelList: []
   },
 
   onShow() {
@@ -33,7 +34,8 @@ Page({
       const modelList = wx.getStorageSync('modelList')
       if (chatList?.length === 0) {
         this.setData({
-          chatList: []
+          chatList: [],
+          modelList
         })
         return
       }
@@ -53,7 +55,8 @@ Page({
         }
       })
       this.setData({
-        chatList: chatListFit.reverse()
+        chatList: chatListFit.reverse(),
+        modelList
       })
     } catch (e) {
       console.error(e)
