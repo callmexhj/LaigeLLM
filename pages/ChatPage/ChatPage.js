@@ -97,7 +97,13 @@ Page({
 
   handleSaveMessagesToCache() {
     const chatList = wx.getStorageSync('chatList')
-    console.log(chatList)
+    // console.log(this.data.chatInfo)
+    const chatIndex = chatList.findIndex(item => item.chatId === this.data.chatId)
+    chatList[chatIndex].messages = this.data.chatInfo.messages
+    wx.setStorage({
+      key: 'chatList',
+      data: [...chatList]
+    })
   },
 
   handleErrorBack(message) {
