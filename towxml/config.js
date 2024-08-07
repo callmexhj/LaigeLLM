@@ -18,7 +18,7 @@ module.exports = {
         'ins',                      // 文本删除线支持
         'mark',                     // 文本高亮支持
         'emoji',                    // emoji表情支持
-        'todo'                      // todo支持
+        // 'todo'                      // todo支持
     ],
 
     // 代码高亮配置，保留需要的选项即可（尽量越少越好，不要随意调整顺序。部分高亮有顺序依赖）
@@ -284,8 +284,5 @@ module.exports = {
     ],
 
     // 图片倍数
-    dpr:1,
-
-    // 代码块显示行号
-    showLineNumber:true
+    dpr:1
 }

@@ -20,7 +20,8 @@ Page({
   data: {
     chatId: '',
     chatInfo: {},
-    showClearConfirm: false
+    showClearConfirm: false,
+    isInGen: false
   },
 
   /**
@@ -57,7 +58,8 @@ Page({
       content: ''
     })
     this.setData({
-      chatInfo: chatInfoCache
+      chatInfo: chatInfoCache,
+      isInGen: true
     })
     const {
       modelId
@@ -94,7 +96,8 @@ Page({
       const chatInfoCache = this.data.chatInfo
       chatInfoCache.messages[chatInfoCache.messages.length - 1].content += text.data
       this.setData({
-        chatInfo: chatInfoCache
+        chatInfo: chatInfoCache,
+        isInGen: false
       })
       this.handleSaveMessagesToCache()
       return

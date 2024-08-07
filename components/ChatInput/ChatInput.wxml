@@ -4,7 +4,7 @@
     <chat-tool class="inline-block" ico="clear" title="清空对话" bind:tapTool="handleClearMessage"/>
   </scroll-view>
   <view class="input-box">
-    <textarea value="{{inputValue}}" class="input-text-area" maxlength="-1" bind:input="handleInputMessage" auto-height placeholder="请在此输入"	disable-default-padding="true" cursor-spacing="40" />
+    <textarea disabled="{{isInGen}}" value="{{inputValue}}" class="input-text-area" maxlength="-1" bind:input="handleInputMessage" auto-height placeholder="{{isInGen ? '正在生成中，请稍后' : '请在此输入'}}"	disable-default-padding="true" cursor-spacing="40" />
     <t-button class="send-ico" theme="primary" icon="chevron-up-circle" shape="circle" size="small" aria-label="提交" bind:tap="handleSend"></t-button>
   </view>
 </view>
