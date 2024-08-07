@@ -6,6 +6,9 @@
   padding-bottom: env(safe-area-inset-bottom);
   background-color: #ffffffc0;
 }
+.keyboard-up-class {
+  margin-bottom: 100px;
+}
 .input-box {
   background-color: #fff;
   display: flex;
