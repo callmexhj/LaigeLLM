@@ -43,10 +43,11 @@ Page({
           modelVersion
         } = modelList.find(item => item.modelId === chatItem.modelId)
         const [, modelVersionName] = getModelNameByModelValue(modelName, modelVersion)
+        const lastMessage = chatItem.messages[chatItem.messages.length - 1].content
         return {
           // 字段匹配
           avatorFileUrl: `../../systemConfig/images/${chatItem.avatorUrl}`,
-          subtitle: '这是一个新对话, 快来聊天吧',
+          subtitle: lastMessage.length > 30 ? lastMessage.substring(0, 30) : lastMessage,
           modelLabel: modelVersionName,
           ...chatItem
         }

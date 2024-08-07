@@ -42,4 +42,5 @@
   white-space: nowrap;
   text-overflow: ellipsis;
   width: 550rpx;
+  color: #00000090;
 }
