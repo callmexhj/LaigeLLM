@@ -35,12 +35,6 @@ Component({
     }
   },
 
-  lifetimes: {
-    attached() {
-      
-    }
-  },
-
   /**
    * 组件的方法列表
    */
@@ -48,6 +42,12 @@ Component({
     handleChangePromptStatus() {
       this.setData({
         showPrompt: !this.data.showPrompt
+      })
+    },
+    handleCopy() {
+      console.log(this.properties.content)
+      wx.setClipboardData({
+        data: this.properties.content,
       })
     }
   }

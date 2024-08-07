@@ -10,6 +10,8 @@
 }
 .assistant-class {
   display: flex;
+  margin: 20rpx 0 0;
+  width: 100%;
 }
 .system-class {
   display: flex;
@@ -27,8 +29,25 @@
 }
 .assistant-message-class {
   color: #000;
-  background-color: #e0e0e0;
+  max-width: 85%;
+}
+.assistant-message-main {
   padding: 10rpx 20rpx;
+  background-color: #e0e0e0;
+  border-radius: 24rpx;
+  margin: 10rpx 40rpx;
+}
+.message-tools {
+  margin: 0 40rpx;
+  width: 70%;
+  display: flex;
+}
+.tool-item {
+  padding: 10rpx;
+  border-radius: 50%;
+}
+.tool-item-hover {
+  background-color: #00000010;
 }
 .system-message-class {
   color: #909399;
