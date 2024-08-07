@@ -8,6 +8,10 @@ import {
   getModelNameByModelValue
 } from '../../systemConfig/modelOptions'
 
+import {
+  Toast
+} from 'tdesign-miniprogram'
+
 Page({
 
   /**
@@ -15,7 +19,8 @@ Page({
    */
   data: {
     chatId: '',
-    chatInfo: {}
+    chatInfo: {},
+    showClearConfirm: false
   },
 
   /**
@@ -146,6 +151,38 @@ Page({
       this.handleErrorBack('缓存读取异常')
       console.error(e)
     }
+  },
+  openClearDialog() {
+    this.setData({
+      showClearConfirm: true
+    })
+  },
+  closeClearDialog() {
+    this.setData({
+      showClearConfirm: false
+    })
+  },
+  handleClearMessage() {
+    const chatInfoCache = this.data.chatInfo
+    const messageCache = []
+    if (chatInfoCache.messages[0].role === 'system') {
+      messageCache.push(chatInfoCache.messages[0])
+    }
+    messageCache.push({
+      role: 'assistant',
+      content: '你好，很高兴和你开始对话！'
+    })
+    chatInfoCache.messages = [...messageCache]
+    this.setData({
+      chatInfo: chatInfoCache,
+      showClearConfirm: false
+    })
+    this.handleSaveMessagesToCache()
+    Toast({
+      context: this,
+      selector: '#t-toast',
+      message: '清空成功',
+      icon: 'check-circle',
+    })
   }
-
 })

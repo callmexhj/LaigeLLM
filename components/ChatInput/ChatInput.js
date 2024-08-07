@@ -30,6 +30,9 @@ Component({
       this.setData({
         inputValue: ''
       })
+    },
+    handleClearMessage() {
+      this.triggerEvent('clear')
     }
   }
 })

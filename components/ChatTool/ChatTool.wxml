@@ -1,0 +1,5 @@
+<!--components/ChatTool/ChatTool.wxml-->
+<view class="chat-tool" hover-class="chat-tool-hover" hover-start-time="20" hover-stay-time="100" bind:tap="handleTapTool">
+  <t-icon name="{{ico}}" size="32rpx" />
+  <view class="tool-title">{{title}}</view>
+</view>

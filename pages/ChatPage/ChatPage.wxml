@@ -1,10 +1,11 @@
 <!--pages/ChatPage/ChatPage.wxml-->
 <view class="chat-page">
-  <scroll-view class="chat-page-scroll" scroll-y="true" scroll-into-view="#item-{{chatInfo.messages.length-1}}"  id="chat-scroll-view">
+  <scroll-view class="chat-page-scroll" scroll-y="true" scroll-into-view="#item-{{chatInfo.messages.length-1}}" id="chat-scroll-view">
     <view wx:for="{{chatInfo.messages}}" wx:key="index" id="item-{{index}}">
-      <message-item content="{{item.content}}" role="{{item.role}}"/>
+      <message-item content="{{item.content}}" role="{{item.role}}" />
     </view>
   </scroll-view>
-  <chat-input bind:receiveMessage="handleReceiveMessage" bind:sendMessage="handleSendMessage"/>
+  <chat-input bind:receiveMessage="handleReceiveMessage" bind:sendMessage="handleSendMessage" bind:clear="openClearDialog" />
   <t-toast id="t-toast" />
+  <t-dialog visible="{{showClearConfirm}}" title="清空对话" content="请确认是否需要清空全部对话内容" confirm-btn="确认" cancel-btn="取消" bind:confirm="handleClearMessage" bind:cancel="closeClearDialog" />
 </view>

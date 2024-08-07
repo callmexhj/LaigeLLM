@@ -1,14 +1,23 @@
 /* components/ChatInput/ChatInput.wxss */
-.chat-input{
+.chat-input {
   width: 100%;
   position: fixed;
   bottom: 0;
   padding-bottom: env(safe-area-inset-bottom);
-  background-color: #ffffffc0;
+  background-color: #ffffff;
 }
-.keyboard-up-class {
-  margin-bottom: 100px;
+
+.chat-tools {
+  /* height: 100rpx; */
+  width: 750rpx;
+  padding: 10rpx 20rpx;
+  white-space: nowrap;
 }
+
+.inline-block {
+  display: inline-block;
+}
+
 .input-box {
   background-color: #fff;
   display: flex;
@@ -19,9 +28,11 @@
   overflow: hidden;
   box-shadow: 0 4px 6px rgba(0, 0, 0, .16), 0 0 6px rgba(0, 0, 0, .10);
 }
+
 .send-ico {
   margin-bottom: 8px;
 }
+
 .input-text-area {
   padding: 16px;
   width: 75%;

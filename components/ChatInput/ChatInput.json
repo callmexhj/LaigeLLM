@@ -3,6 +3,7 @@
   "usingComponents": {
     "t-textarea": "tdesign-miniprogram/textarea/textarea",
     "t-button": "tdesign-miniprogram/button/button",
+    "chat-tool": "/components/ChatTool/ChatTool",
     "t-icon": "tdesign-miniprogram/icon/icon"
   }
 }
