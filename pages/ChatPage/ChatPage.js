@@ -21,7 +21,8 @@ Page({
     chatId: '',
     chatInfo: {},
     showClearConfirm: false,
-    isInGen: false
+    isInGen: false,
+    inputHeight: 100
   },
 
   /**
@@ -42,6 +43,12 @@ Page({
         })
       })
     }
+  },
+
+  handleLineChange(e) {
+    this.setData({
+      inputHeight: e.detail.detail.height
+    })
   },
 
   handleSendMessage(e) {

@@ -41,6 +41,9 @@ Component({
     },
     handleClearMessage() {
       this.triggerEvent('clear')
+    },
+    handleLineChange(e) {
+      this.triggerEvent('lineChange', e)
     }
   }
 })
