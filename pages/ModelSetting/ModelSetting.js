@@ -17,7 +17,8 @@ Page({
     modelList: [],
     tabbarHeight: app.globalData.tabbarHeight,
     isInEdit: false,
-    selectedModelId: []
+    selectedModelId: [],
+    showClearConfirm: false
   },
 
   onReady() {
@@ -66,6 +67,7 @@ Page({
 
   handleEditList() {
     // 修改编辑状态函数
+    console.log(this.data.isInEdit)
     this.setData({
       isInEdit: true
     })
@@ -74,41 +76,45 @@ Page({
   handleDeleteModels() {
     const that = this
     if (this.data.selectedModelId.length === 0) {
+      this.handleCancelDelete()
       Toast({
         context: this,
         selector: '#t-toast',
         message: '请选择模型',
         icon: 'info-circle',
       })
-    } else {
-      try {
-        const modelListFromStorage = wx.getStorageSync('modelList')
-        const newModelList = modelListFromStorage.filter((item) => this.data.selectedModelId.indexOf(item.modelId) === -1)
-        wx.setStorage({
-          key: 'modelList',
-          data: [...newModelList],
-          success() {
-            that.updateModelList()
-            Toast({
-              context: that,
-              selector: '#t-toast',
-              message: `删除成功`,
-              icon: 'check-circle',
-            })
-          }
-        })
-      } catch (e) {
-        console.error(e)
-        Toast({
-          context: this,
-          selector: '#t-toast',
-          message: `读取缓存失败-${String(e)}`,
-          icon: 'error-circle',
-        })
-      }
-      this.setData({
-        isInEdit: false,
-        selectedModelId: []
+      return
+    }
+    try {
+      const modelListFromStorage = wx.getStorageSync('modelList')
+      const chatListFromStorage = wx.getStorageSync('chatList')
+      const newModelList = modelListFromStorage.filter((item) => this.data.selectedModelId.indexOf(item.modelId) === -1)
+      const newChatList = chatListFromStorage.filter((item) => this.data.selectedModelId.indexOf(item.modelId) === -1)
+      wx.setStorage({
+        key: 'modelList',
+        data: [...newModelList],
+        success() {
+          that.updateModelList()
+          that.handleCancelDelete()
+          Toast({
+            context: that,
+            selector: '#t-toast',
+            message: `删除成功`,
+            icon: 'check-circle',
+          })
+        }
+      })
+      wx.setStorage({
+        key: 'chatList',
+        data: [...newChatList]
+      })
+    } catch (e) {
+      console.error(e)
+      Toast({
+        context: this,
+        selector: '#t-toast',
+        message: `读取缓存失败-${String(e)}`,
+        icon: 'error-circle',
       })
     }
   },
@@ -116,6 +122,7 @@ Page({
   handleCancelDelete() {
     this.setData({
       isInEdit: false,
+      showClearConfirm: false,
       selectedModelId: []
     })
   },
@@ -134,5 +141,17 @@ Page({
     this.setData({
       selectedModelId
     })
-  }
+  },
+
+  openClearDialog() {
+    this.setData({
+      showClearConfirm: true
+    })
+  },
+  
+  closeClearDialog() {
+    this.setData({
+      showClearConfirm: false
+    })
+  },
 })

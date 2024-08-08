@@ -1,0 +1,4 @@
+/* pages/ChatPage/ChatPage.wxss */
+.chat-page {
+  overflow: hidden;
+}

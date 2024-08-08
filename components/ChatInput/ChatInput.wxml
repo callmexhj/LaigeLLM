@@ -1,0 +1,11 @@
+<!--components/ChatInput/ChatInput.wxml-->
+<view class="chat-input" id="chat-input-ele">
+  <scroll-view class="chat-tools" scroll-x>
+    <chat-tool class="inline-block" ico="clear" title="清空对话" bind:tapTool="handleClearMessage"/>
+    <chat-tool class="inline-block" ico="refresh" title="重新输入" bind:tapTool="handleClearInput"/>
+  </scroll-view>
+  <view class="input-box">
+    <textarea disabled="{{isInGen}}" value="{{inputValue}}" class="input-text-area" maxlength="-1" bind:input="handleInputMessage" auto-height placeholder="{{isInGen ? '正在生成中，请稍后' : '请在此输入'}}"	disable-default-padding="true" bind:linechange="handleLineChange" cursor-spacing="40" />
+    <t-button class="send-ico" theme="primary" icon="chevron-up-circle" shape="circle" size="small" aria-label="提交" bind:tap="handleSend"></t-button>
+  </view>
+</view>

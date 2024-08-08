@@ -1,0 +1,70 @@
+/* components/MessageItem/MessageItem.wxss */
+.message-item {
+  font-family: '微软雅黑';
+  width: 100%;
+  font-size: 32rpx;
+}
+.user-class {
+  display: flex;
+  justify-content: flex-end;
+}
+.assistant-class {
+  display: flex;
+  margin: 20rpx 0 0;
+  width: 100%;
+}
+.system-class {
+  display: flex;
+  justify-content: center;
+}
+.message-box {
+  max-width: 70%;
+  padding: 20rpx;
+  border-radius: 24rpx;
+  margin: 20rpx 40rpx;
+}
+.user-message-class {
+  color: #fff;
+  background-color: #0052d9;
+}
+.assistant-message-class {
+  color: #000;
+  max-width: 85%;
+}
+.assistant-message-main {
+  padding: 10rpx 24rpx;
+  background-color: #e0e0e0;
+  border-radius: 24rpx;
+  margin: 10rpx 40rpx;
+}
+.message-tools {
+  margin: 0 40rpx;
+  width: 70%;
+  display: flex;
+}
+.tool-item {
+  padding: 10rpx;
+  border-radius: 50%;
+}
+.tool-item-hover {
+  background-color: #00000010;
+}
+.system-message-class {
+  color: #909399;
+  /* display: flex;
+  justify-content: center; */
+  width: 80%;
+  background-color: #fafafa;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, .12), 0 0 6px rgba(0, 0, 0, .04);
+}
+.hide-prompt {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.prompt-hover {
+  background-color: #f0f0f0;
+}
+.h2w-trans{
+  font-family: '微软雅黑';
+}

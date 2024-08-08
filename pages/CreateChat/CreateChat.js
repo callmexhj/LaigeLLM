@@ -166,7 +166,18 @@ Page({
       modelId: this.data.selectModelId,
       title: this.data.title,
       prompt: this.data.prompt,
-      createTimestamp: Date.now()
+      createTimestamp: Date.now(),
+      messages: []
+    }
+    newChatItem.messages.push({
+      role: 'assistant',
+      content: '你好，很高兴和你开始对话！'
+    })
+    if (newChatItem.prompt?.length > 0) {
+      newChatItem.messages.splice(0, 0, {
+        role: 'system',
+        content: newChatItem.prompt
+      })
     }
     this.saveChatToStorage(newChatItem)
   }

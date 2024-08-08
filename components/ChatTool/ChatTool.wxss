@@ -1,0 +1,18 @@
+/* components/ChatTool/ChatTool.wxss */
+.chat-tool {
+  height: 56rpx;
+  width: 146rpx;
+  margin: 10rpx 20rpx 10rpx 0;
+  border-radius: 20rpx;
+  padding: 0  12rpx;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, .12), 0 0 6px rgba(0, 0, 0, .04);
+  display: flex;
+  align-items: center;
+}
+.chat-tool-hover {
+  background-color: #f0f0f0;
+}
+.tool-title {
+  margin-left: 10rpx;
+  font-size: smaller;
+}

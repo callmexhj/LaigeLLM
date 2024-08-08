@@ -24,12 +24,6 @@ Component({
         icon: 'cat',
         ariaLabel: '模型',
         url: '/pages/ModelSetting/ModelSetting'
-      },
-      {
-        value: 'setting',
-        icon: 'setting',
-        ariaLabel: '设置',
-        url: ''
       }
     ]
   },

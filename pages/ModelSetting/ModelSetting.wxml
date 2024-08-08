@@ -7,7 +7,8 @@
     <scroll-view style="max-height: calc(100vh - {{tabbarHeight}}px - 280rpx);" scroll-y="true">
       <model-item wx:for="{{modelList}}" modelTitle="{{item.modelTitle}}" modelSubTitle="{{item.modelSubTitle}}" simpleModelId="{{item.simpleModelId}}" wx:key="modelId" modelId="{{item.modelId}}" theme="{{item.theme}}" bind:modifyModel="handleModifyModel" is-in-edit="{{isInEdit}}" is-card bind:chooseModel="handleChooseModel" />
     </scroll-view>
-    <model-item is-new="false" bind:createModel="handleCreateModel" is-add show-edit="{{modelList.length > 0}}" bind:editList="handleEditList" is-in-edit="{{isInEdit}}" bind:deleteModels="handleDeleteModels" bind:cancelDelete="handleCancelDelete" />
+    <model-item is-new="false" bind:createModel="handleCreateModel" is-add show-edit="{{modelList.length > 0}}" bind:editList="handleEditList" is-in-edit="{{isInEdit}}" bind:deleteModels="openClearDialog" bind:cancelDelete="handleCancelDelete" />
   </view>
+  <t-dialog visible="{{showClearConfirm}}" title="删除模型" content="请确认是否删除选中模型，该操作会同步删除使用该模型的对话记录" confirm-btn="确认" cancel-btn="取消" bind:confirm="handleDeleteModels" bind:cancel="closeClearDialog" />
   <t-toast id="t-toast" />
 </view>

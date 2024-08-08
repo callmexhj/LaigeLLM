@@ -1,0 +1,8 @@
+{
+  "usingComponents": {
+    "chat-input": "/components/ChatInput/ChatInput",
+    "message-item": "/components/MessageItem/MessageItem",
+    "t-dialog": "tdesign-miniprogram/dialog/dialog",
+    "t-toast": "tdesign-miniprogram/toast/toast"
+  }
+}

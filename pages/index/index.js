@@ -13,12 +13,8 @@ Page({
       text: '删除',
       className: 'swipe-btn swipe-btn-delete',
     }, ],
-    chatList: [{
-      chatId: '12312313',
-      title: 'This is the Chat title',
-      subtitle: 'This is the Chat subtitle This is the Chat subtitle This is the Chat subtitle This is the Chat subtitle',
-      modelLabel: 'Default Label'
-    }]
+    chatList: [],
+    modelList: []
   },
 
   onShow() {
@@ -36,23 +32,31 @@ Page({
     try {
       const chatList = wx.getStorageSync('chatList')
       const modelList = wx.getStorageSync('modelList')
+      if (chatList?.length === 0) {
+        this.setData({
+          chatList: [],
+          modelList
+        })
+        return
+      }
       const chatListFit = chatList.map((chatItem) => {
         const {
           modelName,
           modelVersion
         } = modelList.find(item => item.modelId === chatItem.modelId)
         const [, modelVersionName] = getModelNameByModelValue(modelName, modelVersion)
+        const lastMessage = chatItem.messages[chatItem.messages.length - 1].content
         return {
           // 字段匹配
           avatorFileUrl: `../../systemConfig/images/${chatItem.avatorUrl}`,
-          subtitle: '这是一个新对话, 快来聊天吧',
+          subtitle: lastMessage.length > 30 ? lastMessage.substring(0, 30) : lastMessage,
           modelLabel: modelVersionName,
           ...chatItem
         }
       })
-
       this.setData({
-        chatList: chatListFit.reverse()
+        chatList: chatListFit.reverse(),
+        modelList
       })
     } catch (e) {
       console.error(e)
@@ -60,7 +64,9 @@ Page({
   },
 
   handleClickChatItem(e) {
-    console.log(e.detail.chatId)
+    wx.navigateTo({
+      url: `/pages/ChatPage/ChatPage?chatId=${e.detail.chatId}`
+    })
   },
 
   handleAddChatItem() {

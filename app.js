@@ -9,6 +9,7 @@ App({
       }
     })
   },
+  towxml: require('/towxml/index'),
   globalData: {
     userInfo: null
   }

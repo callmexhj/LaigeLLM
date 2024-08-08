@@ -6,6 +6,9 @@
   width: 100%;
   /* padding: 0 0 180rpx 0; */
 }
+.empty-view {
+  padding: 150rpx 0;
+}
 .chat-list-view {
   height: 400rpx;
 }
