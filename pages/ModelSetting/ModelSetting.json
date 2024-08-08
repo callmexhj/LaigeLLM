@@ -2,6 +2,7 @@
   "usingComponents": {
     "t-toast": "tdesign-miniprogram/toast/toast",
     "t-empty": "tdesign-miniprogram/empty/empty",
+    "t-dialog": "tdesign-miniprogram/dialog/dialog",
     "model-item": "/components/ModelItem/ModelItem"
   }
 }
